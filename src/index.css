@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-ink-50 text-ink-900;
+  }
+
+  ::selection {
+    @apply bg-brand-300 text-ink-950;
+  }
+}
+
+@layer utilities {
+  .bg-wood {
+    background-color: #141110;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(249, 115, 22, 0.18), transparent 55%),
+      radial-gradient(ellipse at 85% 20%, rgba(239, 68, 68, 0.16), transparent 50%),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.035) 0px,
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px,
+        transparent 7px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.18) 0px,
+        rgba(0, 0, 0, 0.18) 2px,
+        transparent 2px,
+        transparent 46px
+      );
+  }
+
+  .bg-art {
+    background-image:
+      linear-gradient(180deg, rgba(2, 6, 23, 0.82) 0%, rgba(2, 6, 23, 0.92) 55%, #020617 100%),
+      url('/assets/entusados-art.jpeg');
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .bg-papel {
+    background-image: radial-gradient(rgba(249, 115, 22, 0.18) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .glow-brand {
+    box-shadow:
+      0 0 0 1px rgba(249, 115, 22, 0.3),
+      0 18px 45px -20px rgba(249, 115, 22, 0.6);
+  }
+
+  .glass {
+    background-color: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(14px);
+  }
+}
+
+@layer components {
+  .label-overline {
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-ink-400;
+  }
+}
+
+/* ============================================================
+   Dark gastronómico · overrides scoped
+   Se aplica al cliente (.theme-dark) y back-office (.admin-dark)
+   ============================================================ */
+
+.theme-dark,
+.admin-dark {
+  color-scheme: dark;
+}
+
+.theme-dark .bg-white,
+.admin-dark .bg-white {
+  background-color: #0f172a;
+}
+
+.theme-dark .bg-white\/90,
+.theme-dark .bg-white\/95,
+.admin-dark .bg-white\/90,
+.admin-dark .bg-white\/95 {
+  background-color: rgba(2, 6, 23, 0.88);
+}
+
+.theme-dark .bg-white\/60,
+.admin-dark .bg-white\/60 {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.theme-dark .bg-ink-50,
+.admin-dark .bg-ink-50 {
+  background-color: #0b1220;
+}
+
+.theme-dark .bg-ink-50\/70,
+.admin-dark .bg-ink-50\/70 {
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+.theme-dark .bg-ink-50\/60,
+.admin-dark .bg-ink-50\/60 {
+  background-color: rgba(15, 23, 42, 0.55);
+}
+
+.theme-dark .bg-ink-50\/40,
+.admin-dark .bg-ink-50\/40 {
+  background-color: rgba(15, 23, 42, 0.4);
+}
+
+.theme-dark .bg-ink-100,
+.admin-dark .bg-ink-100 {
+  background-color: #1e293b;
+}
+
+.theme-dark .bg-ink-100\/70,
+.admin-dark .bg-ink-100\/70 {
+  background-color: rgba(30, 41, 59, 0.65);
+}
+
+.theme-dark .bg-brand-50,
+.admin-dark .bg-brand-50 {
+  background-color: rgba(249, 115, 22, 0.12);
+}
+
+.theme-dark .bg-brand-100,
+.admin-dark .bg-brand-100 {
+  background-color: rgba(249, 115, 22, 0.16);
+}
+
+.theme-dark .bg-emerald-50,
+.admin-dark .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.12);
+}
+
+.theme-dark .bg-emerald-100,
+.admin-dark .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.16);
+}
+
+.theme-dark .bg-accent-50,
+.theme-dark .bg-accent-50\/40,
+.theme-dark .bg-accent-50\/60,
+.theme-dark .bg-accent-100,
+.admin-dark .bg-accent-50,
+.admin-dark .bg-accent-50\/40,
+.admin-dark .bg-accent-50\/60,
+.admin-dark .bg-accent-100 {
+  background-color: rgba(239, 68, 68, 0.14);
+}
+
+.theme-dark .bg-amber-50,
+.theme-dark .bg-amber-100,
+.admin-dark .bg-amber-50,
+.admin-dark .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.14);
+}
+
+.theme-dark .bg-sky-50,
+.theme-dark .bg-sky-100,
+.admin-dark .bg-sky-50,
+.admin-dark .bg-sky-100 {
+  background-color: rgba(14, 165, 233, 0.14);
+}
+
+.theme-dark .border-ink-100,
+.admin-dark .border-ink-100 {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.theme-dark .border-ink-200,
+.admin-dark .border-ink-200 {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.theme-dark .border-ink-300,
+.admin-dark .border-ink-300 {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.theme-dark .divide-ink-100 > :not([hidden]) ~ :not([hidden]),
+.admin-dark .divide-ink-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.theme-dark .text-ink-900,
+.admin-dark .text-ink-900 {
+  color: #f8fafc;
+}
+
+.theme-dark .text-ink-800,
+.admin-dark .text-ink-800 {
+  color: #e2e8f0;
+}
+
+.theme-dark .text-ink-700,
+.admin-dark .text-ink-700 {
+  color: #cbd5e1;
+}
+
+.theme-dark .text-ink-600,
+.admin-dark .text-ink-600 {
+  color: #94a3b8;
+}
+
+.theme-dark .text-ink-500,
+.admin-dark .text-ink-500 {
+  color: #94a3b8;
+}
+
+.theme-dark .text-ink-400,
+.admin-dark .text-ink-400 {
+  color: #64748b;
+}
+
+.theme-dark .text-ink-300,
+.admin-dark .text-ink-300 {
+  color: #475569;
+}
+
+.theme-dark .text-emerald-700,
+.theme-dark .text-emerald-800,
+.admin-dark .text-emerald-700,
+.admin-dark .text-emerald-800 {
+  color: #6ee7b7;
+}
+
+.theme-dark .text-accent-700,
+.theme-dark .text-accent-800,
+.admin-dark .text-accent-700,
+.admin-dark .text-accent-800 {
+  color: #fca5a5;
+}
+
+.theme-dark .text-amber-700,
+.theme-dark .text-amber-800,
+.admin-dark .text-amber-700,
+.admin-dark .text-amber-800 {
+  color: #fcd34d;
+}
+
+.theme-dark .text-sky-700,
+.theme-dark .text-sky-800,
+.admin-dark .text-sky-700,
+.admin-dark .text-sky-800 {
+  color: #7dd3fc;
+}
+
+.theme-dark .text-brand-800,
+.admin-dark .text-brand-800 {
+  color: #fdba74;
+}
+
+.theme-dark .hover\:bg-ink-50:hover,
+.admin-dark .hover\:bg-ink-50:hover {
+  background-color: rgba(30, 41, 59, 0.6);
+}
+
+.theme-dark .hover\:bg-ink-100:hover,
+.admin-dark .hover\:bg-ink-100:hover {
+  background-color: #1e293b;
+}
+
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select,
+.admin-dark input,
+.admin-dark textarea,
+.admin-dark select {
+  background-color: #0b1220;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f8fafc;
+}
+
+.theme-dark input::placeholder,
+.theme-dark textarea::placeholder,
+.admin-dark input::placeholder,
+.admin-dark textarea::placeholder {
+  color: #64748b;
+}
+
+.theme-dark select option,
+.admin-dark select option {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.theme-dark input[type='number']::-webkit-outer-spin-button,
+.theme-dark input[type='number']::-webkit-inner-spin-button {
+  filter: invert(1);
+}
+
+.theme-dark {
+  scrollbar-color: #334155 #020617;
+}
+
+.theme-dark ::-webkit-scrollbar,
+.admin-dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb,
+.admin-dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
